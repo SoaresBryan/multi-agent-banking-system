@@ -1,0 +1,3 @@
+@echo off
+echo Iniciando interface do Banco Agil...
+streamlit run app/frontend/chat.py
