@@ -40,7 +40,6 @@ async def adicionar_cliente(request: AdicionarClienteRequest):
     """
     cliente_service = ClienteService()
 
-    # Validar CPF
     cpf_limpo = request.cpf.replace(".", "").replace("-", "").strip()
     if len(cpf_limpo) != 11 or not cpf_limpo.isdigit():
         raise HTTPException(
@@ -48,11 +47,9 @@ async def adicionar_cliente(request: AdicionarClienteRequest):
             detail="CPF inválido. O CPF deve conter exatamente 11 dígitos numéricos.",
         )
 
-    # Verificar se cliente já existe
     if cliente_service.buscar_por_cpf(request.cpf):
         raise HTTPException(status_code=400, detail="Cliente já existe no sistema")
 
-    # Adicionar cliente
     sucesso = cliente_service.adicionar_cliente(
         cpf=request.cpf,
         nome=request.nome,

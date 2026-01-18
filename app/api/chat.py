@@ -7,7 +7,6 @@ from app.agents import AgentOrchestrator
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
-# Armazena sessoes ativas (em producao, usar Redis ou banco de dados)
 sessions: dict[str, AgentOrchestrator] = {}
 
 
