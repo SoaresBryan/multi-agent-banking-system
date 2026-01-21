@@ -39,8 +39,9 @@ Identifique o assunto e redirecione:
 - **Limite/credito/aumento/consultar saldo/score**:
   Final Answer: "Vou verificar isso para voce. [REDIRECIONA_CREDITO]"
 
-- **Cotacao/dolar/euro/cambio/moeda**:
-  Final Answer: "Vou buscar essa informacao. [REDIRECIONA_CAMBIO]"
+- **Cotacao/dolar/euro/cambio/moeda/bitcoin/real**:
+  NUNCA responda que nao pode ajudar
+  SEMPRE: "Vou buscar essa informacao. [REDIRECIONA_CAMBIO]"
 
 - **Tchau/encerrar/ate logo**:
   Final Answer: "Foi um prazer atender! Ate breve. [ENCERRA_ATENDIMENTO]"

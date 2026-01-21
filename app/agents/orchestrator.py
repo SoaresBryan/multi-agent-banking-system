@@ -80,7 +80,7 @@ class AgentOrchestrator:
         credito_service = CreditoService()
 
         historico = "\n".join(
-            [f"- {m['role']}: {m['content'][:100]}..." for m in self.contexto.historico[-6:]]
+            [f"- {m['role']}: {m['content']}" for m in self.contexto.historico[-20:]]
         )
         if not historico:
             historico = "(inicio da conversa)"

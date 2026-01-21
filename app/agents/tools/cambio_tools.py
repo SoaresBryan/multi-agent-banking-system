@@ -2,7 +2,7 @@
 
 from crewai.tools import tool
 
-from app.services.cambio_service import CambioService
+from app.services.cambio_service import CambioAPIIndisponivelError, CambioService
 
 _cambio_service = CambioService()
 
@@ -36,12 +36,12 @@ def consultar_cotacao(moeda: str) -> str:
     }
 
     codigo = mapeamento.get(moeda.lower().strip(), moeda.upper().strip())
-    cotacao = _cambio_service.obter_cotacao_sync(codigo, "BRL")
 
-    if cotacao:
+    try:
+        cotacao = _cambio_service.obter_cotacao_sync(codigo, "BRL")
         return f"COTACAO|{codigo}|{cotacao.valor:.4f}|{cotacao.data_consulta.strftime('%H:%M')}"
-    else:
-        return f"ERRO|Nao foi possivel obter cotacao para {codigo}"
+    except CambioAPIIndisponivelError as e:
+        return f"API_INDISPONIVEL|{str(e)}"
 
 
 @tool("listar_moedas_disponiveis")

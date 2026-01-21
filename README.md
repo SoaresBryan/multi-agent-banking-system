@@ -597,7 +597,7 @@ streamlit run app/frontend/chat.py
 ```
 ou
 ```bash
-.\chat_run
+.\run_chat
 ```
 O Streamlit abrirá automaticamente em [http://localhost:8501](http://localhost:8501)
 

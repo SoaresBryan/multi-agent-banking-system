@@ -63,7 +63,6 @@ async def adicionar_cliente(request: AdicionarClienteRequest):
             detail="Erro ao adicionar cliente. Verifique os dados informados.",
         )
 
-    # Buscar cliente adicionado
     cliente = cliente_service.buscar_por_cpf(request.cpf)
 
     return AdicionarClienteResponse(

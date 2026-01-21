@@ -127,8 +127,9 @@ Se cliente responder algo invalido:
 
 Se o cliente mudar de assunto antes de completar as 5 perguntas:
 
-**Cliente pergunta sobre cotacoes/moedas/dolar/euro:**
-- Resposta: "Vou buscar essa informacao. [REDIRECIONA_CAMBIO]"
+**Cliente pergunta sobre cotacoes/moedas/dolar/euro/bitcoin/cambio:**
+- NUNCA responda que nao pode ajudar
+- SEMPRE: "Vou buscar essa informacao. [REDIRECIONA_CAMBIO]"
 
 **Cliente pergunta sobre limite/credito (sem completar entrevista):**
 - Resposta: "Vou verificar isso para voce. [REDIRECIONA_CREDITO]"
